@@ -34,4 +34,14 @@ public class QueryProcessorTest {
     public void willRespondToQuestonToAddTwoNumbers() throws Exception {
         assertThat(queryProcessor.process("58dc6de0: what is 9 plus 3"), is("12"));
     }
+
+    //fb8fbe00:  which  of  the  following  numbers  is  the  largest:  447,  2,  150,  47
+
+    @Test
+    public void willRespondToQuestonToLargestNumbers() throws Exception {
+        assertThat(
+                queryProcessor.
+                        process("fb8fbe00:  which  of  the  following  numbers  is  the  largest:  447,  2,  150,  47"),
+                is("447"));
+    }
 }
