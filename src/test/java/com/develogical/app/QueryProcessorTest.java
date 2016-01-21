@@ -50,6 +50,6 @@ public class QueryProcessorTest {
         assertThat(
                 queryProcessor.
                         process("d3389780: which of the following numbers is both a square and a cube: 1, 3, 64"),
-                is("1"));
+                is("1, 64"));
     }
 }
