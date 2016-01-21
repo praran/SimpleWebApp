@@ -14,6 +14,9 @@ public class QueryProcessor {
         }else if(query.toLowerCase().contains("plus")){
             String[] strings = query.split(" ");
             return String.valueOf(Integer.valueOf(strings[3]) + Integer.valueOf(strings[5]));
+        }else if(query.toLowerCase().contains("multiplied by")){
+            String[] strings = query.split(" ");
+            return String.valueOf(Integer.valueOf(strings[3].trim()) * Integer.valueOf(strings[6].trim()));
         }else if (query.toLowerCase().contains("which  of  the  following  numbers  is  the  largest:")){
             int[] ints = getIntsFromString(query);
             Arrays.sort(ints);

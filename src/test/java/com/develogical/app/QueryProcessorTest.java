@@ -61,4 +61,10 @@ public class QueryProcessorTest {
                         process("38cd5870:  which  of  the  following  numbers  are  primes:  3,  7,  10"),
                 is("3, 7"));
     }
+
+    //903d77d0:  what  is  0  multiplied  by  10"
+    @Test
+    public void willRespondToQuestonToMultiplyTwoNumbers() throws Exception {
+        assertThat(queryProcessor.process("903d77d0: what is 0 multiplied by 10"), is("0"));
+    }
 }
