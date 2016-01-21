@@ -67,4 +67,9 @@ public class QueryProcessorTest {
     public void willRespondToQuestonToMultiplyTwoNumbers() throws Exception {
         assertThat(queryProcessor.process("903d77d0: what is 0 multiplied by 10"), is("0"));
     }
+
+    @Test
+    public void willRespondToQuestonNthFibonnaciSequence() throws Exception {
+        assertThat(queryProcessor.process("ea4da160: what is the 6th number in the Fibonacci sequence"), is("8"));
+    }
 }
