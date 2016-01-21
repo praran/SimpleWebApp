@@ -11,7 +11,7 @@ public class QueryProcessor {
             return "basil";
         }else if(query.toLowerCase().contains("plus")){
             String[] strings = query.split(" ");
-            return String.valueOf(Integer.valueOf(strings[2]) + Integer.valueOf(strings[4]));
+            return String.valueOf(Integer.valueOf(strings[3]) + Integer.valueOf(strings[5]));
         }
         return "No answer";
     }
