@@ -15,15 +15,26 @@ public class QueryProcessor {
             String[] strings = query.split(" ");
             return String.valueOf(Integer.valueOf(strings[3]) + Integer.valueOf(strings[5]));
         }else if (query.toLowerCase().contains("which  of  the  following  numbers  is  the  largest:")){
-            String[] strings = query.split(":");
-            String[] nums = strings[2].split(",");
-            int[] ints = new int[nums.length];
-            for(int i =0; i < nums.length ; i ++){
-                ints[i] = Integer.valueOf(nums[i].trim());
-            }
+            int[] ints = getIntsFromString(query);
             Arrays.sort(ints);
             return String.valueOf(ints[ints.length-1]);
+        }else if(query.toLowerCase().contains("which of the following numbers is both a square and a cube:")){
+            int[] nums = getIntsFromString(query);
+             return "" + nums[0];
+
         }
         return "No answer";
+    }
+
+
+
+    private int[] getIntsFromString(String query) {
+        String[] strings = query.split(":");
+        String[] nums = strings[2].split(",");
+        int[] ints = new int[nums.length];
+        for(int i =0; i < nums.length ; i ++){
+            ints[i] = Integer.valueOf(nums[i].trim());
+        }
+        return ints;
     }
 }

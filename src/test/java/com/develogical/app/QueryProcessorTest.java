@@ -44,4 +44,12 @@ public class QueryProcessorTest {
                         process("fb8fbe00:  which  of  the  following  numbers  is  the  largest:  447,  2,  150,  47"),
                 is("447"));
     }
+
+    @Test
+    public void willRespondToQuestonForSquareAndCubes() throws Exception {
+        assertThat(
+                queryProcessor.
+                        process("d3389780: which of the following numbers is both a square and a cube: 1, 3, 64"),
+                is("1"));
+    }
 }
