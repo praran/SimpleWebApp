@@ -52,4 +52,13 @@ public class QueryProcessorTest {
                         process("d3389780: which of the following numbers is both a square and a cube: 1, 3, 64"),
                 is("1, 64"));
     }
+
+    //38cd5870:  which  of  the  following  numbers  are  primes:  623,  227
+    @Test
+    public void willRespondToQuestionPrimeNumbers() throws Exception {
+        assertThat(
+                queryProcessor.
+                        process("38cd5870:  which  of  the  following  numbers  are  primes:  3,  7,  10"),
+                is("3, 7"));
+    }
 }

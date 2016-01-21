@@ -36,8 +36,39 @@ public class QueryProcessor {
             }
              return buffer.toString();
 
+        }else if(query.toLowerCase().contains("38cd5870:  which  of  the  following  numbers  are  primes:")){
+            int[] nums = getIntsFromString(query);
+            StringBuffer buffer = new StringBuffer();
+            boolean isFirst = true;
+            for(int i =0; i < nums.length ; i++){
+                int n = nums[i];
+                if(isPrime(n)){
+                    if(isFirst){
+                        buffer.append(n);
+                        isFirst = false;
+                    }else{
+                        buffer.append(", "+n);
+
+                    }
+                }
+            }
+            return buffer.toString();
+
+
         }
         return "No answer";
+    }
+
+
+    boolean isPrime(int n) {
+        //check if n is a multiple of 2
+        if (n%2==0) return false;
+        //if not, then just check the odds
+        for(int i=3;i*i<=n;i+=2) {
+            if(n%i==0)
+                return false;
+        }
+        return true;
     }
 
 
